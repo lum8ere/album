@@ -1,0 +1,4 @@
+{
+    "port": 5000,
+    "mongoURL": "mongodb+srv://Alexander:1234567890@cluster0.t44uj.mongodb.net/poekt?retryWrites=true&w=majority"
+}

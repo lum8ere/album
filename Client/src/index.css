@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.title {
+    text-align: center;
+    font-family: Calibri;
+    color: rgb(255, 255, 255);
+    background-color: rgb(19, 211, 19);
+}
+
+.sdn_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.album_photo_container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: pink; */
+    width: 60%;
+    height: 30rem;
+    margin: 25px;
+}
+
+.user_container {
+    background-color: rgb(240, 238, 238);
+    width: 19rem;
+    height: 37rem;
+    text-align: center;
+}
+
+.dropdown {
+    background-color: white;
+    width: 30rem;
+    height: 3rem;
+    margin: 0 auto;
+    text-align: right;
+    font-family: Calibri;
+    font-size: 18px;
+}
+
+.user_box {
+    border: grey;
+    border: solid;
+    line-height: 2rem;
+    padding: 2px;
+    margin-top: 10px;
+    max-width: 13rem;
+    text-align: center;
+}
+
+.photobox_container {
+    display: flex-wrap;
+    margin: 30px;
+    padding: 15px;
+    width: 120%;
+    height: 30rem;
+    left: 20rem;
+    bottom: 1rem;
+    right: 16rem;
+    text-align: center;
+}
+
+.photo_box {
+    width: 4rem;
+    height: 4rem;
+    background-color: white;
+    line-height: 2rem;
+    padding: 5px;
+    margin-top: 10px;
+    flex: 1 1 auto;
+    border: 1px black solid;
+    text-align: center;
+    margin: 5px;
+    /* adds space between photo boxes*/
+    max-width: 13rem;
+    text-align: center;
+}
+
+.modal__wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(10px);
+}
+
+.modal__wrapper.open {
+    height: 100%;
+    display: block;
+}
+
+.modal__wrapper.close {
+    height: 0;
+    display: none;
+}
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    display: block;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: 650px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+    background: #00d9ff;
+}
+
+.bmodalbackground {
+    margin: 0; /* убираем отступы */
+    padding: 0; /* убираем отступы */
+    position: fixed; /* фиксируем положение */
+    top:0; /* растягиваем блок по всему экрану */
+    bottom:0;
+    left:0;
+    right:0;
+    background: rgba(0,0,0,0.5); /* полупрозрачный цвет фона */
+    z-index:100; /* выводим фон поверх всех слоев на странице браузера */
+    opacity:0; /* Делаем невидимым */
+    pointer-events: none; /* элемент невидим для событий мыши */
+    }
+    
+    /* при отображении модального окно - именно здесь начинается магия */
+    .bmodalbackground:target {
+        opacity: 1; /* делаем окно видимым */ 
+        pointer-events: auto; /* элемент видим для событий мыши */
+    }
+    
+    /* ширина диалогового окна и его отступы от экрана */
+    .bmodalwindow {
+        width: 100%;
+        max-width: 300px;
+        margin: 10% auto;
+        padding: 2%;
+        background: #fff;
+        border-radius: 3px;
+    }
+    
+    /* настройка заголовка */
+    .bmodalwindow h3 {
+    padding: 0;
+    margin: 0;
+    }
+    
+    /* оформление сообщение */
+    .bmodalwindow p {
+    padding: 0;
+    margin: 4% 0 8% 0;
+    }
+    
+    /* вид кнопки ЗАКРЫТЬ */
+    .bmodalwindow a {
+    display: block;
+    color: #fff;
+    background: #369;
+    padding: 2%;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    }
+    
+    /* вид кнопки ЗАКРЫТЬ при наведении на нее мыши */
+    .bmodalwindow a:hover {
+    background: #47a;
+    }

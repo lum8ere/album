@@ -1,0 +1,7 @@
+.photobox_container {
+    display: flex;
+flex-flow: row wrap;
+align-content: center;
+    
+}
+
